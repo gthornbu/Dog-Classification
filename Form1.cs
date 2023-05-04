@@ -48,25 +48,18 @@ namespace Dog_Classification
 
         private void button2_Click(object sender, EventArgs e)
         {
-            // Create a new instance of the OpenFileDialog
             OpenFileDialog openFileDialog1 = new OpenFileDialog();
 
-            // Set the filter for image files
             openFileDialog1.Filter = "Image Files (*.jpg, *.jpeg, *.png, *.bmp)|*.jpg;*.jpeg;*.png;*.bmp";
 
-            // Set the initial directory to the user's Pictures folder
             openFileDialog1.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyPictures);
 
-            // Display the OpenFileDialog by calling the ShowDialog method
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
-                // Get the file name and path of the selected image
                 string imagePath = openFileDialog1.FileName;
 
-                // Specify the path where you want to save the image
                 string savePath = @"image.jpg";
 
-                // Copy the selected image to the specified path
                 using (FileStream fileStream = new FileStream(savePath, FileMode.Create))
                 {
                     using (BinaryWriter binaryWriter = new BinaryWriter(fileStream))

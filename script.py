@@ -19,7 +19,7 @@ breed_list = ['chihuahua','japanese_spaniel','maltese_dog','pekinese','shih-tzu'
     'samoyed','pomeranian','chow','keeshond','brabancon_griffon','pembroke','cardigan','toy_poodle','miniature_poodle','standard_poodle',
     'mexican_hairless','dingo','dhole','african_hunting_dog']
 
-model = load_model('my_inception_model.h5') # Replace with path to your saved model
+model = load_model('my_inception_model.h5')
 
 # Preprocess image
 img = image.load_img("image.jpg", target_size=(224, 224))
